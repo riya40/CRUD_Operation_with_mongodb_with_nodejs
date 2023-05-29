@@ -22,4 +22,17 @@ async function connectToDatabase(){
 
 }
 
+async function createDocument(empid,name,email){
+    try{
+        const employee = new Employee({empid,name,email})
+        await  employee.save()
+        console.log("user created:",employee)
+    }catch(error){
+        console.error("error in user creation",error)
+    }
+}
+
+
+
+
 
