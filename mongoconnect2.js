@@ -32,6 +32,20 @@ async function createDocument(empid,name,email){
     }
 }
 
+async function updateDocument(empid,name,email){
+    try{
+        const employee= await Employee.findOneAndUpdate(
+            {empid},                     //to find via primary key
+            {name,email},          //fields to update
+            {new: true}
+        );
+        console.log('Updated!!: ',employee);
+    }catch(error){
+        console.error('Error updating: ',error)
+    }
+
+}
+
 
 
 
