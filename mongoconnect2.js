@@ -46,6 +46,15 @@ async function updateDocument(empid,name,email){
 
 }
 
+async function deleteDocument(empid){
+    try{
+        const employee = await Employee.findOneAndDelete({empid});
+        console.log("user Deleted:",employee)
+    }catch(error){
+        console.error("error in user Deletion",error)
+    }
+}
+
 
 
 
